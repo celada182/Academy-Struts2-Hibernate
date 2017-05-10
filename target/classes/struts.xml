@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="inicio" namespace="/" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>WEB-INF/views/index.jsp</result>
+		</action>
+	</package>
+	<package name="cursos" namespace="/cursos" extends="struts-default">
+		<action name="todos" class="com.celada.actions.CursosAction"
+			method="verCursos">
+			<result>/WEB-INF/views/verCursos.jsp</result>
+		</action>
+		<action name="nuevo" class="com.celada.actions.CursosAction"
+			method="nuevoCurso">
+			<result>/WEB-INF/views/nuevoCurso.jsp</result>
+		</action>
+		<action name="anadir" class="com.celada.actions.CursosAction"
+			method="anadirCurso">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="editar" class="com.celada.actions.CursosAction"
+			method="editarCurso">
+			<result>/WEB-INF/views/editarCurso.jsp</result>
+		</action>
+		<action name="modificar" class="com.celada.actions.CursosAction"
+			method="modificarCurso">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="eliminar" class="com.celada.actions.CursosAction"
+			method="eliminarCurso">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="alumnos" class="com.celada.actions.CursosAction"
+			method="alumnosCurso">
+			<result>/WEB-INF/views/alumnosCurso.jsp</result>
+		</action>
+	</package>
+	<package name="alumnos" namespace="/alumnos" extends="struts-default">
+		<action name="todos" class="com.celada.actions.AlumnosAction"
+			method="verAlumnos">
+			<result>/WEB-INF/views/verAlumnos.jsp</result>
+		</action>
+		<action name="nuevo" class="com.celada.actions.AlumnosAction"
+			method="nuevoAlumno">
+			<result>/WEB-INF/views/nuevoAlumno.jsp</result>
+		</action>
+		<action name="anadir" class="com.celada.actions.AlumnosAction"
+			method="anadirAlumno">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="editar" class="com.celada.actions.AlumnosAction"
+			method="editarAlumno">
+			<result>/WEB-INF/views/editarAlumno.jsp</result>
+		</action>
+		<action name="modificar" class="com.celada.actions.AlumnosAction"
+			method="modificarAlumno">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="eliminar" class="com.celada.actions.AlumnosAction"
+			method="eliminarAlumno">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="elegir" class="com.celada.actions.AlumnosAction"
+			method="elegirCurso">
+			<result>/WEB-INF/views/elegirCurso.jsp</result>
+		</action>
+		<action name="confirmar" class="com.celada.actions.AlumnosAction"
+			method="confirmarCurso">
+			<result>/WEB-INF/views/confirmarCurso.jsp</result>
+		</action>
+		<action name="inscribir" class="com.celada.actions.AlumnosAction"
+			method="inscribirCurso">
+			<result type="redirectAction">
+				<param name="actionName">todos</param>
+			</result>
+		</action>
+		<action name="cursos" class="com.celada.actions.AlumnosAction"
+			method="cursosAlumno">
+			<result>/WEB-INF/views/cursosAlumno.jsp</result>
+		</action>
+	</package>
+</struts>
